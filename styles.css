@@ -1,5 +1,14 @@
 /* Modern CSS with Advanced Liquid Animations & Ultra Attractive Design */
 
+/* Favicon Styling - Rounded Corner Effect */
+link[rel="icon"],
+link[rel="shortcut icon"],
+link[rel="apple-touch-icon"] {
+    border-radius: 8px;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+}
+
 /* CSS Variables for Dynamic Theming */
 :root {
     /* Primary Colors - Green Theme */
