@@ -592,6 +592,7 @@ body::before {
 .logo:hover .logo-text {
     background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -1px;
     transform: translateY(-1px);
@@ -603,6 +604,7 @@ body::before {
 .logo:hover .logo-superscript {
     background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1.5px;
     filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8));
@@ -1099,6 +1101,7 @@ body.dark-theme .moon-icon {
     padding: 2px;
     background: linear-gradient(45deg, #34d399, #10b981, #059669);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0;
@@ -2780,6 +2783,7 @@ body.dark-theme .logo-text {
 body.dark-theme .logo:hover .logo-text {
     background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 25px rgba(16, 185, 129, 1)) 
             drop-shadow(0 0 40px rgba(5, 150, 105, 0.8))
@@ -2797,6 +2801,7 @@ body.dark-theme .logo-superscript {
 body.dark-theme .logo:hover .logo-superscript {
     background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.9));
 }
@@ -3113,7 +3118,6 @@ body.dark-theme .particle {
     .portfolio-item::before {
         animation: none;
     }
-}
 
     .hero-title {
         font-size: 2.5rem;
