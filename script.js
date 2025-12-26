@@ -311,21 +311,25 @@ function initCounters() {
 
 function animateCounterAdvanced(element) {
     const target = parseInt(element.dataset.count);
-    const duration = 2000;
+    const duration = 2000; // 2 seconds animation
     const startTime = performance.now();
     
     function updateCounter(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const eased = easeOutQuart(progress);
-        const current = Math.floor(eased * target);
         
-        element.textContent = current + (target === 98 ? '%' : '+');
+        // Start from 1 and count up to target
+        const current = Math.floor(1 + (eased * (target - 1)));
+        
+        // Add + suffix for all numbers (no % symbol)
+        element.textContent = current + '+';
         
         if (progress < 1) {
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target + (target === 98 ? '%' : '+');
+            // Final value with + suffix
+            element.textContent = target + '+';
         }
     }
     
