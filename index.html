@@ -11,18 +11,28 @@
     <meta name="author" content="Pegas">
     <title>Pegas | Innovation & Excellence in Sri Lanka</title>
     
-    <!-- Favicon - Multiple formats for maximum browser compatibility -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4.1">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_image.png?v=4.1">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_image.png?v=4.1">
-    <link rel="shortcut icon" href="favicon_image.png?v=4.1">
-    <link rel="apple-touch-icon" href="favicon_image.png?v=4.1">
-    <link rel="icon" href="favicon.ico?v=4.1">
-    <link rel="manifest" href="site.webmanifest">
+    <!-- Favicon - Optimized for maximum visibility -->
+    <link rel="icon" type="image/png" href="/favicon_image.png?v=5.0">
+    <link rel="shortcut icon" type="image/png" href="/favicon_image.png?v=5.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_image.png?v=5.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_image.png?v=5.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_image.png?v=5.0">
+    <link rel="manifest" href="/site.webmanifest">
     
-    <link rel="stylesheet" href="styles.css?v=4.1">
+    <link rel="stylesheet" href="styles.css?v=5.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Force favicon reload -->
+    <script>
+        (function() {
+            var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+            link.type = 'image/png';
+            link.rel = 'icon';
+            link.href = '/favicon_image.png?v=' + Date.now();
+            document.getElementsByTagName('head')[0].appendChild(link);
+        })();
+    </script>
 </head>
 <body>
     <!-- Professional Preloader -->
@@ -622,6 +632,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=4.1"></script>
+    <script src="script.js?v=5.0"></script>
 </body>
 </html>
