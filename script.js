@@ -658,38 +658,8 @@ function showSuccessMessage() {
 
 // Theme Toggle
 function initThemeToggle() {
-    const themeToggle = document.querySelector('.theme-toggle');
-    
-    // Add ripple effect on click
-    themeToggle?.addEventListener('click', (e) => {
-        document.body.classList.toggle('dark-theme');
-        
-        // Create ripple effect
-        const ripple = document.createElement('span');
-        ripple.classList.add('ripple');
-        const rect = themeToggle.getBoundingClientRect();
-        ripple.style.left = e.clientX - rect.left + 'px';
-        ripple.style.top = e.clientY - rect.top + 'px';
-        themeToggle.appendChild(ripple);
-        
-        setTimeout(() => ripple.remove(), 600);
-        
-        if (document.body.classList.contains('dark-theme')) {
-            localStorage.setItem('theme', 'dark');
-            // Smooth transition effect
-            document.body.style.transition = 'background 0.5s ease, color 0.5s ease';
-        } else {
-            localStorage.setItem('theme', 'light');
-            // Smooth transition effect
-            document.body.style.transition = 'background 0.5s ease, color 0.5s ease';
-        }
-    });
-    
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-    }
+    // Always set dark theme
+    document.body.classList.add('dark-theme');
 }
 
 // Scroll Effects
