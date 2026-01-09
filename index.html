@@ -226,20 +226,20 @@
     
     <!-- Favicon - Optimized for maximum visibility -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon_image.png?v=7.0">
-    <link rel="icon" type="image/png" href="favicon_image.png?v=7.0">
-    <link rel="shortcut icon" type="image/png" href="favicon_image.png?v=7.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_image.png?v=7.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_image.png?v=7.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_image.png?v=7.0">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon_image.png?v=10.0">
+    <link rel="icon" type="image/png" href="favicon_image.png?v=10.0">
+    <link rel="shortcut icon" type="image/png" href="favicon_image.png?v=10.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_image.png?v=10.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_image.png?v=10.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_image.png?v=10.0">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="manifest" href="site.webmanifest">
     
     <!-- Preload critical resources for faster rendering -->
-    <link rel="preload" href="styles.css?v=7.0" as="style">
+    <link rel="preload" href="styles.css?v=10.0" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" as="style">
     
-    <link rel="stylesheet" href="styles.css?v=7.0">
+    <link rel="stylesheet" href="styles.css?v=10.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
@@ -1224,14 +1224,33 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script src="script.js?v=7.0" defer></script>
+    <script src="script.js?v=10.0" defer></script>
     
     <!-- Verify all resources loaded -->
     <script>
+        // Clear old service workers and caches
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+        
+        // Clear old caches
+        if ('caches' in window) {
+            caches.keys().then(function(names) {
+                for (let name of names) {
+                    caches.delete(name);
+                }
+            });
+        }
+        
         window.addEventListener('load', function() {
             console.log('✅ All resources loaded successfully');
             console.log('✅ Animations active');
-            console.log('✅ APK download ready');
+            console.log('✅ Version 10.0 loaded');
+            console.log('✅ Cache cleared for fresh content');
         });
     </script>
 </body>
