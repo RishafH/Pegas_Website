@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initPortfolio();
     initContactForm();
     initScrollEffects();
+    initDivisionExpand();
 });
 
 // Fast Preloader
@@ -213,5 +214,47 @@ function initScrollToTop() {
     
     scrollBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Division Expand/Collapse
+function initDivisionExpand() {
+    const divisionBlocks = document.querySelectorAll('.division-block');
+    
+    divisionBlocks.forEach(block => {
+        // Click on division to expand
+        block.addEventListener('click', (e) => {
+            // Don't expand if clicking on links inside
+            if (e.target.closest('a')) return;
+            
+            const isCollapsed = block.classList.contains('collapsed');
+            
+            // Collapse all other divisions
+            divisionBlocks.forEach(otherBlock => {
+                if (otherBlock !== block) {
+                    otherBlock.classList.add('collapsed');
+                }
+            });
+            
+            // Toggle current division
+            if (isCollapsed) {
+                block.classList.remove('collapsed');
+                // Smooth scroll to the division
+                setTimeout(() => {
+                    block.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            } else {
+                block.classList.add('collapsed');
+            }
+        });
+    });
+    
+    // Click outside to collapse all
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.division-block')) {
+            divisionBlocks.forEach(block => {
+                block.classList.add('collapsed');
+            });
+        }
     });
 }
